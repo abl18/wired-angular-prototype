@@ -1,0 +1,403 @@
+/**
+ * Card system.
+ * All types of cards and the stuff that goes in them.
+*/
+
+.card
+  @extends $card-base
+  .content-block &
+    width 300px
+    ul
+      @extends $list-none
+  a
+    transition(color)
+    @extends $no-underline
+    &:hover
+      color light-gray
+  > a // first a wraps everything in the card
+    @extends $clearfix
+    display block
+    padding 13px
+  .byline
+    @extends $meta-text
+  .desc
+    line-clamp(3, 27px)
+    font-family exchange
+    font-size 15px
+    line-height 23px
+  .hdr
+    border-bottom 1px solid light-gray
+    i
+      margin-right 12px
+  .time
+    margin-top 4px
+  .title
+    @extends $proxima
+    font-size 18px
+    line-height 20px
+// end base card
+
+// no box-shadow, card is inside a post
+.card.seamless
+  box-shadow none
+// end seamless
+
+// card has multiple items / stories (default is single)
+.card.multi
+  @extends $multiple-item-card
+// end multi
+
+// text-only card
+.card.text
+  @extends $clearfix
+  &:hover
+    h3
+      opacity .75
+  i
+    float left
+    margin-right 13px
+  .post-wrap
+    width calc(100% - 53px)
+  h2
+    @extends $sub-header
+    color light-gray
+    letter-spacing 0
+    margin-bottom 3px
+  h3
+    transition(opacity)
+    @extends $tungsten
+    font-size 44px
+    line-height 37px
+// end text
+
+// smart means things like most-popular, most-recent, etc
+.card.smart
+  @extends $multiple-item-card
+  .byline
+    margin 0 0 4px 1px
+  img
+    width 75px
+  meta
+    margin-top 4px
+  .post-wrap
+    width calc(100% - 88px) // returns the full width of the card - (thumbnail + margin)
+  .title
+    @extends $exchange-small
+// end smart
+
+// inserted into post-content, pulls one related story
+.card.related
+  a
+    padding 0
+  img
+    margin 13px 0
+  .title
+    margin-bottom 4px
+    text-transform none
+  .story-list
+    padding 0 13px 13px
+    li
+      border-bottom 0
+// end related
+
+// sponsored card
+.card.sponsored
+  background sponsored-gray
+  border 1px solid lighter-gray
+  box-shadow none
+  &:hover
+    .title
+      color dark-gray
+  .meta
+    color dark-gray
+  a,
+  .title
+    color light-gray
+// end sponsored
+
+// more link at bottom of cards / search results / where-ever
+.more
+  @extends $clearfix
+  @extends $meta-text
+  display block
+  padding 13px
+  text-overflow ellipsis
+  white-space nowrap
+  &:hover
+    opacity .8
+    img
+      transform rotate(90deg)
+  span
+    color light-gray
+    display inline-block
+    float left
+    &:last-child
+      margin 10px 0 0 13px
+// end more
+
+// author, headline, desc, etc
+.post-wrap
+  float left
+
+// list of articles inside multi-item cards
+.story-list
+  a
+    @extends $clearfix
+    display block
+    padding 13px
+  img
+    float left
+    margin-right 13px
+  li
+    @extends $clearfix
+    border-bottom 1px solid lightest-gray
+    &.sponsored
+      background lightest-gray
+      margin 0
+      a
+        color light-gray
+      .meta:first-of-type
+        color dark-gray
+      &:hover
+        a,
+        .meta
+          color dark-gray
+  .post-wrap
+    width calc(100% - 43px)
+
+
+
+
+// figure this weirdness out, really shouldn't be so different from other card
+// .card.authors
+//   h2
+//     color black
+//     font-family proxima
+//     font-size 18px
+//     text-transform none
+//   p
+//     @extends $exchange-small
+//   [class*='col']
+//     padding-bottom 75px
+//   .more
+//     absolute bottom 0
+//     padding 0
+//   > div:last-child
+//     [class*='col'] > img
+//       border-top 1px solid light-gray
+//       padding-top 13px
+
+// .card.staff
+//   h2
+//     color black
+//     font-family proxima
+//     font-size 18px
+//     margin-top 4px
+//     text-transform none
+//   .thumb
+//     width 75px
+//   .row
+//     margin 0 25px
+//   [class*='col']
+//     border-top 1px solid light-gray
+//     margin-left 13px
+//     margin-right 25px
+//     padding 13px 0
+//     &:first-child
+//       margin-left 0
+//     &:last-child
+//       margin-right 0
+//   .twitter-handle
+//     @extends $link-underline
+//     absolute bottom 13px left 88px
+//     box-shadow inset 0 -2px 0 light-blue
+//     color light-gray
+
+// .card.staff,
+// .card.authors
+//   .heading
+//     padding-left 25px
+
+// .card.author-info
+//   border-top 10px solid black
+//   .story-list
+//     border-top 1px solid lightest-gray
+//   .d-col-7
+//     .title
+//       font-size 32px
+//       line-height 32px
+
+// .search
+//   main
+//     .card
+//       border-top 10px solid black
+//       float left
+//       @media (min-width 728px)
+//         width calc(100% - 327px)
+//       p
+//         font-family exchange
+//         font-size 15px
+//         line-height 23px
+//     .post-wrap
+//       width calc(100% - 113px)
+//     .thumb
+//       width 100px
+
+// // search mockups
+// .search
+//   .search-result-sort
+//     @extends $meta-text
+//     absolute top 20px right 13px
+//     border-radius 3px
+//     cursor pointer
+
+
+
+
+
+
+
+
+// dylan wanted to be able to configure cards by aspect ratio but im not sure if that makes sense
+// cards basically are either 100% across and above, or floated. and he just wants some way to adjust
+// them so they fit within the grid
+// float image base
+// [class*='image-left']
+//   @media (min-width 480px)
+//     img
+//       float left
+//       margin 0 13px 0 0
+// // end img-left
+
+// // force image to left
+// .card.image-left-15
+//   @media (min-width 480px)
+//     img
+//       width 15%
+// // end image 50
+
+// // force image to left
+// .card.image-left-25
+//   @media (min-width 480px)
+//     img
+//       width 25%
+// // end image 50
+
+// // force image to left at 50
+// .card.image-left-40
+//   @media (min-width 480px)
+//     img
+//       width 40%
+// end image 50
+
+// force image to left at 70%
+// .card.image-left-70
+//   @media (min-width 480px)
+//     .title
+//       font-size 32px
+//       line-height 32px
+//     img
+//       width 70%
+// end image 70
+
+// .card.comments-drawer
+//   @extends $exchange-small
+//   @extends $multiple-items
+//   padding 13px
+//   .comment
+//     margin-bottom 25px
+//   .comment,
+//   .comments,
+//   .comment-response
+//     @extends $clearfix
+//   .comment-response
+//     @extends $meta-text
+//     margin-top 13px
+//   .metadata
+//     a
+//       @extends $link-underline
+//   .metadata,
+//   .comment-response
+//     li
+//       float left
+//       margin-right 7px
+//       padding-right 7px
+//       white-space nowrap
+//       &.time,
+//       &.reply,
+//       &.share,
+//       &.meta-time
+//         list-style-position inside
+//         list-style-type disc
+//   .comment-response
+//     a:hover
+//       color black
+//   input
+//     border 1px solid #ddd
+//   .comment-inner
+//     float left
+//     width calc(100% - 73px)
+//   [class*='avatar']
+//     float left
+//     margin-right 13px
+//   .avatar-big
+//     width 45px
+//   .avatar-small
+//     width 30px
+//   .comment-form
+//     float left
+//     width calc(100% - 58px)
+//     input
+//       width calc(100% - 26px)
+//   .comment-submit
+//     display none
+//   .sub-comments
+//     padding-left 57px
+//   .submit-comment
+//     @extends $clearfix
+//     margin-bottom 13px
+//   .vote
+//     display none
+
+
+// for key, value in (section-colors)
+//   .section-alt-3
+//     .card.{key}
+//       img
+//         background value
+
+// .section-alt-2
+//   .card.section-card
+//     background transparent
+//     border none
+//     box-shadow none
+//     padding 0
+//     .heading
+//       border none
+//       color black
+//       float left
+//       padding-left 0
+//     .post-wrap
+//       float left
+//       width calc(100% - 113px)
+//     .section-icon
+//       float left
+//       width 100px
+//     [class*='follow']
+//       @extends $meta-text
+//       float left
+//       margin-top 38px
+//       a
+//         @extends $link-underline
+//         box-shadow inset 0 -3px 0 light-blue
+
+// .section-alt-3
+//   .card.section-card
+//     .section-icon
+//       min-height 175px
+//     .post-wrap
+//       padding 13px
+//     [class*='follow']
+//       @extends $meta-text
+//       a
+//         @extends $link-underline

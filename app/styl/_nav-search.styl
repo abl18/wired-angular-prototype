@@ -1,0 +1,77 @@
+/**
+ * nav search stylz
+*/
+
+#nav-search
+  @extends $proxima
+  display none
+  opacity 0
+  text-align center
+  +media('tab-max')
+    display block
+    height 75px
+    opacity 1
+    position relative
+  +media('tab-plus')
+    background rgba(255, 255, 255, .98)
+    fixed top 50px right 0 bottom 0 left 0
+    z-index 999999999
+  .search-active &
+    display block
+    opacity 1
+  fieldset
+    width 100%
+    +media('tab-plus')
+      absolute top 50%
+      margin-top -2.5em
+  input,
+  label
+    color black
+    font-size 24px
+    letter-spacing .02em
+    text-align center
+    width 100%
+    +media('tab-max')
+      height 75px
+    +media('tab-plus')
+      font-size 5em
+  input
+    -moz-appearance none
+    -webkit-appearance none
+    background lightest-gray
+    border 0
+    border-radius 0
+    opacity .75
+    padding 0
+    +media('tab-plus')
+      background transparent
+    &:hover,
+    &:focus
+      opacity 1
+      outline 0
+    &:focus + label
+      opacity .2
+    &:valid + label
+      transform(translate3d(-3em, 0, 0))
+      opacity 0
+  label
+    absolute top 0 right 0 left 0
+    opacity .5
+    text-transform none
+    +media('tab-max')
+      top 50%
+      margin-top -12px
+    &:hover
+      cursor text
+      opacity 1
+
+#search-submit
+  @extends $visually-hidden
+  &:focus,
+  &:active
+    absolute top 7.5em right .5em bottom 0 left 0
+    clip auto
+    height auto
+    margin 0
+    overflow visible
+    width auto

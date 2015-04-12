@@ -1,0 +1,47 @@
+/**
+ * Mixins. I don't use mixins too much, because it generates more css
+ * I recommend only using when you want a code block that be dropped anywhere (media queries)
+ * or if you need to be able to pass params, obvs
+*/
+
+card-base()
+  *zoom 1
+  background white
+  border-radius 1px
+  border-top 3px solid black
+  box-shadow 0 0 4px light-gray
+  position relative
+  width 100%
+  &:before
+  &:after
+    content ''
+    display table
+  &:after
+    clear both
+
+// line clamp (ellipsis) hackz for excerpts, only really works on webkit browsers
+line-clamp(lines, your-line-height)
+  -webkit-box-orient vertical
+  display -webkit-box
+  overflow hidden
+  text-overflow ellipsis
+  -webkit-line-clamp lines
+  max-height calc(lines * your-line-height)
+
+// for use inside media queries
+site-container()
+  margin 0 auto
+  max-width 970px // width of billboard ad
+  position relative
+  width 93.75% // 300/320 (Width of Ads / Width of Phone)
+  +media('(min-width 768px)')
+    width 94.75% // 728/768 (Width of Leaderboard / Width of iPad)
+  // .thin &
+  //   max-width 929px
+
+/**
+ * ensures consistent transitions
+ * just pass all if you need more to animate more than one
+ */
+transition(element)
+  transition element .15s cubic-bezier(.33, .66, .66, 1)

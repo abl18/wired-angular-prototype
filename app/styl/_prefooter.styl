@@ -1,0 +1,97 @@
+/**
+ * Prefooter stylz
+*/
+
+#prefooter
+  background lightest-gray
+  clear both
+  padding 0 0 13px
+  .card
+    @extends $multiple-item-card
+  // @TODO DONT USE NOTS
+  .card:not(.smart)
+    li:first-of-type
+      a // @TODO TOOMUCHNEST
+        max-width 100%
+        width 100%
+  .col
+    +media('tab')
+      margin-right 0
+      padding-right 13px
+      &:first-of-type
+        order 1
+      &:nth-of-type(2)
+        display none
+        order 3
+      &:nth-of-type(3)
+        order 2
+        padding-right 0
+    +media('lap-max')
+      &:first-of-type
+        order 2
+      &:nth-of-type(2)
+        display none
+        order 3
+      &:nth-of-type(3)
+        order 1
+  img
+    margin-bottom 13px
+  .row
+    @extends $site-container
+    .row
+      flex-wrap wrap
+      width 100%
+  .single &
+    margin-top 50px
+    padding-top 50px
+  .thumb
+    @extends $uri-prefooter-arrow
+    width 30px
+  .wallpaper &
+    background transparent
+
+
+// .extra-marg
+//   #prefooter
+//     .row [class*='col']
+//       margin-right 32px
+//       &:last-child
+//         margin-right 0
+
+// #next-up
+//   @extends $transition
+//   background white
+//   box-shadow 0 0 2px light-gray
+//   cursor pointer
+//   opacity .5
+//   position relative
+//   &:hover
+//     box-shadow 0 -4px 5px 0 rgba(206, 206, 206, .5)
+//     opacity 1
+//     transform translate3d(0, -1px, 0)
+//     .next-up-arrow
+//       opacity 1
+//       transform rotate3d(0, 0, 1, 0deg)
+//   #post-header
+//     @extends $site-container
+//     padding 50px 0 0
+//   .heading
+//     border-bottom 0
+//     padding 13px 0
+
+// .next-up-arrow
+//   @extends $transition-slow
+//   absolute top 50% left 50%
+//   background white
+//   border-radius 50%
+//   height 100px
+//   margin-left -50px
+//   margin-top -13px
+//   opacity 0
+//   transform rotate3d(0, 0, 1, 90deg)
+//   width 100px
+//   img
+//     left 50%
+//     margin-left -13px
+//     margin-top -26px
+//     width 26px

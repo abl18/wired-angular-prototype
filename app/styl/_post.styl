@@ -1,0 +1,303 @@
+/**
+ * General article stylz
+*/
+
+.post
+  &.inset,
+  &.standard
+    @extends $site-container
+  &.wide
+    main
+      max-width 100%
+      width 100%
+    .post-container
+      @extends $site-container
+
+.expandable:hover
+  cursor pointer
+
+.post-container
+  @extends $clearfix
+  margin 0 auto
+  position relative
+
+// captions
+.caption,
+figcaption
+  @extends $caption
+  margin-top 13px
+  padding-bottom 13px
+  a
+    @extends $no-underline
+  img
+    display inline-block
+    margin 0 0 -1px 7px
+    max-width 18px
+
+/**
+ * middle column, where content actually goes
+ * class because there might be multiple 'blocks' broken up by full width ads, or full width 'sidebars'
+ */
+.content-block
+  @extends $exchange
+  // overflow hidden
+  +media('sm-tab-plus')
+    margin-right 325px
+  +media('tab-plus')
+    margin-right 350px
+  +media('lap-plus')
+    padding-left 55px
+
+  // double space for images that aren't inside another tag and sub headers
+  > img,
+  > video,
+  > object,
+  > iframe
+    margin 27px 0 13px
+
+  a
+    @extends $link-underline
+
+  // all inline modules such as sidebars, pullquotes, and related links are inside aside tags
+  aside
+    margin 25px 0
+    width 100%
+    @media (min-width 850px)
+      margin 7px 25px 13px 0
+      width 300px
+
+  b,
+  .lede,
+  strong
+    @extends $oxide
+    font-size 14px // makes it line up with exchange x-height
+    line-height 14px // needs a smaller line height than it's parent text
+
+  blockquote
+    color light-gray
+    font-size 15px
+    line-height 25px
+    p
+      font-size inherit
+      line-height inherit
+
+  .caption,
+  .credit
+    em,
+    cite
+      font-family inherit
+      font-style normal
+
+  /**
+   * once the browser is wide enough for content + ad sidebar
+   * pull it out a bit to the left, lined up with social
+   * should be used in conjunction with asides (pullquotes, cards)
+  */
+  .carve
+    position relative
+    @media (max-width 850px)
+      width 100%
+    @media (min-width 850px)
+      float left
+      margin 25px 25px 25px 0
+    +media('lap-plus')
+      margin 60px 50px 50px -100px
+
+  .col
+    background lightest-gray
+    margin-bottom 13px
+
+  dl
+    dt
+      @extends $proxima
+
+  em,
+  cite
+    @extends $exchange-italic
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    @extends $sub-header
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6
+    margin 27px 0 13px
+
+  li
+    clear both
+    list-style-position inside
+    &:before
+      @extends $proxima
+      width 10px
+
+  // because the before on the li is being used for the counter, ask writers to use p tags with ordered lists, and put the before there, best solution i have at the moment
+  ol
+    counter-reset list-counter
+    list-style none
+    li
+      counter-increment list-counter
+      &:before
+        content counter(list-counter)
+        font-size 80%
+        margin-right 5px
+    ol
+      margin-left 25px
+    p
+      display inline
+      &:before
+        content '|'
+        margin-right 8px
+
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote
+    margin 0 0 13px
+    &:empty
+      display none
+
+  .pullquote
+    background white
+    border-bottom 1px solid dark-gray
+    border-top 24px solid dark-gray
+    display none
+    +media('(min-width 639px)')
+      display block
+    p
+      @extends $proxima
+      font-size 24px
+      line-height 27px
+      margin 25px 0 13px
+
+    .attribution
+      display block
+      margin-bottom 25px
+      &:before
+        content '—'
+
+  // for unordered lists, we add a 'pipe' using before
+  ul
+    list-style-type disc
+    li:before
+      content '|'
+      margin 0 7px 0 -3px
+
+  ul.oxide,
+  ol.oxide
+    li:before
+      @extends $oxide
+
+
+
+
+// testing
+// body[class*='side-comment']
+//   main
+//     padding-bottom 50px
+// .caption
+//   img
+//     display inline-block
+//     margin 0 0 -1px 7px
+//     max-width 18px
+// horizontal 'sidebars' that break up content blocks
+// really gotta come up with a better name for this
+// @TODO also clean it u
+// .aside-group {
+//   @extends %proxima;
+//   color $light-gray;
+//   margin 50px 0;
+//   width 100%;
+//   &.carve {
+//     float none; // override carved float left (causes craziness in ff)
+//   }
+//   &.wide {
+//     @include clearfix;
+//     margin 45px auto;
+//     .wp-caption-text {
+//       font-size 16px;
+//       line-height 22px;
+//     }
+//     // info graphic
+//     &.info {
+//       h3 {
+//         margin 0;
+//       }
+//       .wp-caption-text {
+//         border 0;
+//         margin 0;
+//       }
+//     }
+//   }
+//   .flex-row {
+//     border-bottom 1px solid #999;
+//     border-top 1px solid #999;
+//   }
+//   .flex-cell,
+//   [class*='col'] {
+//     border-right 1px solid #999;
+//     margin 0;
+//     padding 0 25px 13px 13px;
+//     h4 {
+//       @extends %tungsten;
+//       color #000;
+//       font-size 72px;
+//       line-height 56px;
+//       margin 14px 0 5px; // countering the line-height
+//     }
+//     &first-of-type {
+//       padding-right 25px;
+//     }
+//     &last-of-type {
+//       border-right 0;
+//       padding-left 13px;
+//     }
+//   }
+//   p {
+//     font-size 16px;
+//     letter-spacing .01em;
+//     line-height 22px;
+//   }
+//   a {
+//     @extends %no-underline;
+//     display block;
+//     line-height 0;
+//   }
+//   h3 {
+//     @extends %proxima;
+//     border-bottom 3px solid #000;
+//     color #000;
+//     font-size 36px;
+//     line-height 36px;
+//     margin 0 0 25px;
+//     padding 0 0 25px;
+//     text-transform none;
+//   }
+//   .wp-caption-text {
+//     @extends %caption-text;
+//     border-bottom 1px solid #999;
+//     margin 0;
+//     padding 25px 0;
+//     em {
+//       @extends %oxide;
+//       display inline;
+//       font-size 10px;
+//       letter-spacing .1em;
+//       line-height 20px;
+//       text-transform uppercase;
+//       img {
+//         display inline-block;
+//         margin 0 3px -1px 7px;
+//         max-width 18px;
+//       }
+//     }
+//   }
+// }

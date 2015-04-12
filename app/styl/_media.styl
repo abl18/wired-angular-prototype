@@ -1,0 +1,45 @@
+/**
+ * Define our breakpoints, group them intelligently when compiled
+*/
+
+// Define the cache and the aliases
+$media_cache = {}
+$media_aliases = {
+  mob:        '(max-width: 480px)'
+  mob-plus:   '(min-width: 480px)'
+  palm:       '(min-width: 481px) and (max-width: 639px)'
+  palm-max:   '(max-width: 639px)'
+  small-tab:  '(min-width: 640px) and (max-width: 728px)'
+  sm-tab-plus:'(min-width: 640px)'
+  tab:        '(min-width: 729px) and (max-width: 960px)'
+  tab-max:    '(max-width: 728px)'
+  tab-plus:   '(min-width: 729px)'
+  lap:        '(min-width: 961px) and (max-width: 1199px)'
+  lap-max:    '(max-width: 960px)'
+  lap-plus:   '(min-width: 961px)'
+  desk:       '(min-width: 1200px)'
+}
+
+// Mixin for caching the blocks with the given conditions
+media($condition)
+  helper($condition)
+    unless $media_cache[$condition]
+      $media_cache[$condition] = ()
+    push($media_cache[$condition], block)
+
+  +helper($condition)
+    {selector() + ''}
+      {block}
+
+// Function we would use to call all the cached styles
+apply_media_cache()
+  for $media, $blocks in $media_cache
+    $media = unquote($media_aliases[$media] || $media)
+    $media = '(%s)' % $media unless match('\(', $media)
+    $media = 'only screen and %s' % $media
+    @media $media
+      for $block in $blocks
+        {$block}
+
+// Here would be our main styles, using the `+media` mixin
+// …

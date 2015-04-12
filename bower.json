@@ -1,0 +1,29 @@
+{
+  "name": "WIRED-Bower",
+  "description": "Making Wired Angular - Dependencies",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-local-storage": "~0.0.7",
+    "angular-mocks": "~1.2.x",
+    "jquery2": "~2.0.0",
+    "json3": "~3.3.2",
+    "lodash": "~2.4.1",
+    "ui-router": "~0.2.11",
+    "angular-sanitize": "~1.2.25",
+    "angular-route": "~1.2.25"
+  },
+  "devDependencies": {
+    "angular": "1.2.x",
+    "angular-local-storage": "~0.0.7",
+    "angular-mocks": "~1.2.x",
+    "es5-shim": "~4.0.3",
+    "jquery2": "~2.0.0",
+    "json3": "~3.3.2",
+    "lodash": "~2.4.1",
+    "ui-router": "~0.2.11",
+    "react": "~0.12.0"
+  }
+}

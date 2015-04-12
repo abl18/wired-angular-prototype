@@ -1,0 +1,92 @@
+/**
+ * styl/style.styl -> css/style.css
+ * @guidelines: https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md
+ * the above is written for scss, but most of the ideas and rules still apply
+ *
+ * also some things I do:
+ * short is better than long for class and id names, as long as it's descriptive
+ * ids are good and you should use them if an element is global
+ * avoid regex, if possible
+ * try to keep things alphabetical. selectors, rules, everything
+ * keep files small, break them into multiple files as needed to keep things manageable
+ * i prefer /** for comments longer than 1 line. use // otherwise. the compiler removes both.
+ * mixins first, then extends, then styles
+ * avoid transition all, use the custom transition mixin
+ * class-name not className. i reserve the use of camel case for js.
+ * do not use the data-js attr for styling. keep js and css separate.
+*/
+
+// nibbles
+@import 'nib'
+
+// all vars
+@import '_vars'
+// all extends a-z
+@import '_extends'
+// media 'cache' defines our breakpoints, intelligently groups media queries
+@import '_media'
+// all mixins a-z
+@import '_mixins'
+// all helper classes
+@import '_helpers'
+// reset and global styles / helper classes a-z
+@import '_base'
+// data URIS (converting common images to uris for performance (fewer requests))
+@import '_dataURIs'
+
+// ads
+@import '_ads'
+// cards
+@import '_cards'
+// comments
+@import '_comments'
+// flexbox spec
+@import '_flexbox'
+// @font-face
+@import 'fonts.css'
+// global footer
+@import '_footer'
+// forms reset
+@import '_forms'
+// forms reset
+@import '_gallery'
+// grids (home, sections, tags, etc)
+@import '_grid'
+// global header
+@import '_header'
+// icon font
+@import '_icons'
+// list view, alternative to grid view
+// @import '_list'
+// global nav - base
+@import '_nav-base'
+// global nav / brand bar
+@import '_nav-brandbar'
+// global nav / grid version
+// @import '_nav-grid'
+// global nav - article 'moth'
+// @import '_nav-moth'
+// global nav - search
+@import '_nav-search'
+// nav - side arrows for sections / articles
+@import '_nav-tabs'
+// headline / byline / featured image above posts
+@import '_post-header'
+// post content
+@import '_post'
+// post sidebar
+@import '_post-sidebar'
+// global re-circ grid before footer
+@import '_prefooter'
+// spinnerz and thin bars
+// @import '_progress'
+// social
+@import '_social'
+// sticky elements
+@import '_sticky'
+// legacy support for tables (old old posts)
+@import '_tables'
+
+
+// Here we call all the cached styles, must be called last
+apply_media_cache()

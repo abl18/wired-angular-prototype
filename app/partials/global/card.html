@@ -1,0 +1,24 @@
+<h4 class='hdr'>
+    <a href='{{section}}/'><i class='icon {{section}}'></i>{{section}}</a>
+</h4>
+
+<ul class='story-list'>
+    <a href='{{articles[0].permalink}}'>
+        <img class='lead-story' ng-src='{{articles[0].thumbnail.medium[0]}}'>
+    </a>
+    <li ng-repeat='article in articles'>
+        <a href='{{article.permalink}}'>
+            <img class='thumb' src='images/sidebar-story-arrow.png'>
+
+            <div class='post-wrap'>
+                <h5 class='title' ng-bind-html="article.title"></h5>
+                <span class='byline show-mobile'>{{article.author}}</span>
+            </div>
+        </a>
+    </li>
+</ul>
+
+<a class='more' href='{{section}}/'>
+    <span class='ui ui-more'></span>
+    <span>More {{section}}</span>
+</a>

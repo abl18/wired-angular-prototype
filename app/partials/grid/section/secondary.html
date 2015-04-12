@@ -1,0 +1,48 @@
+<div class="asymmetrical row" data-items="3">
+    <div class="card col text t-col-12 d-col-5 active">
+        <a href="{{articles[5].link}}">
+            <i class="icon security"></i>
+            <div class="post-wrap">
+                <h2 class="author">{{articles[5].author.name}}</h2>
+                <h3 class="headline" ng-bind-html="articles[5].title"></h3>
+                <span class='meta time'>{{articles[5].date}}</span>
+            </div>
+        </a>
+    </div>
+    <div class="col t-col-12 d-col-7">
+        <div class="card image-left active">
+            <a href="{{articles[6].link}}">
+                <img ng-src="{{articles[6].thumbnail.large[0]}}">
+                <span class="meta">{{articles[6].terms.category[0].name}}</span>
+                <h2 class="title" ng-bind-html="articles[6].title"></h2>
+                <span class='meta time'>{{articles[6].date}}</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="{{articles[7].link}}">
+                <img ng-src="{{articles[7].thumbnail.large[0]}}">
+                <span class="meta">{{articles[7].terms.category[0].name}}</span>
+                <h2 class="title" ng-bind-html="articles[7].title"></h2>
+                <span class='meta time'>{{articles[7].date}}</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="asymmetrical row" data-items="2">
+    <div class="card col d-col-4 t-col-12">
+        <a href="{{articles[8].link}}">
+            <img ng-src="{{articles[8].thumbnail.thumbnail[0]}}">
+            <span class="meta">{{articles[8].terms.category[0].name}}</span>
+            <h2 class="title" ng-bind-html="articles[8].title"></h2>
+            <span class='meta time'>{{articles[8].date}}</span>
+        </a>
+    </div>
+    <div class="card col d-col-8 t-col-12 active">
+        <a href="{{articles[9].link}}">
+            <img ng-src="{{articles[9].thumbnail.large[0]}}">
+            <span class="meta">{{articles[9].terms.category[0].name}}</span>
+            <h2 class="title" ng-bind-html="articles[9].title"></h2>
+            <span class='meta time'>{{articles[9].date}}</span>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{
+  "globalstrict": false,
+
+  "bitwise": true,
+  "browser": true,
+  "curly": true,
+  "es3": true,
+  "esnext": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "node": true,
+  "noempty": true,
+  "nonew": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+
+  "globals": {
+    "angular": false,
+
+    "browser": false,
+    "element": false,
+    "by": false,
+
+    "inject": false,
+    "describe": false,
+    "afterEach": false,
+    "beforeEach": false,
+    "it": false,
+    "expect": false,
+    "spyOn": false,
+
+    "_": true,
+    "$h": true,
+    "CN": true,
+    "Headroom": true,
+    "jQuery": true,
+    "OBR": true,
+    "Wired": true
+  }
+}

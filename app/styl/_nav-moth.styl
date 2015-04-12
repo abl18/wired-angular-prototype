@@ -1,0 +1,81 @@
+// // the 'MOTH', or articles viewer
+// #nav-stories
+//   display none // for now
+//   height 137px
+//   overflow hidden
+//   position relative
+//   width 100%
+//   .moth-arrow
+//     bottom 0
+//     width 200px
+//     img
+//       width 25px
+//       margin-top -(@width / 2)
+//     &.left
+//       img
+//         left 50px
+//     &.right
+//       img
+//         right 50px
+//   .story-curtain
+//     absolute top 0 bottom 0
+//     width 200px
+//     z-index 99
+//     &.left
+//       background-image linear-gradient(to right, black 0, transparent 100%)
+//       left 0
+//     &.right
+//       background-image linear-gradient(to left, black 0, transparent 100%)
+//       right 0
+//   img
+//     float left
+//     padding-right 13px
+//     width 50%
+//   ul
+//     @extends $transition-transform-slow
+//     height 137px
+//     position absolute
+//     width auto
+//   li
+//     @extends $transition
+//     border-right 1px solid dark-gray
+//     float left
+//     height 137px
+//     padding 13px
+//     width 275px
+//     &:hover
+//       cursor pointer
+//       .title
+//         color white
+//   a
+//     color light-gray
+//     float left
+//     width 50%
+//   .title
+//     @extends $transition
+//     font-family exchange
+//     font-size 13px
+//     -webkit-font-smoothing antialiased
+//     line-height 16px
+//     margin-top 4px
+//     &:hover
+//       color white
+
+// // default to showing stories instead of sections on articles
+// // .single
+// //   @media (min-width 728px)
+// //     #nav-stories
+// //       display block
+// //     .headroom--top
+// //       #nav-sections
+// //         display none
+// //       .menu-expanded
+// //         #nav-sections
+// //           display block
+// //         #nav-stories
+// //           display none
+
+// // .single
+// //   .headroom--not-top
+// //     #nav-stories
+// //       display none

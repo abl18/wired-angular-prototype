@@ -1,0 +1,393 @@
+/**
+ * Global Header
+*/
+
+#article-title
+  absolute top 0
+  color black
+  display none
+  font-family proxima
+  font-size 14px
+  letter-spacing 0
+  text-align center
+  text-transform none
+  width 100%
+  h6,
+  .ui-logo
+    display inline-block
+  h6
+    @extends $meta-text
+    margin-left 13px
+    relative top -20px
+
+#global-header
+  transition(all)
+  box-shadow 0 0 5px rgba(0, 0, 0, .5)
+  fixed top 0 right 0 left 0
+  transform translate3d(0, 0%, 0)
+  user-select none
+  z-index 999
+  &.search-active
+    bottom 0
+  &.nav-active
+    +media('tab-max')
+      bottom 0
+    .ui-boxes
+      background-position-x -163px
+      opacity 1
+  &.gallery-active
+    .close
+      display block
+    .toggle,
+    #global-nav
+      display none
+  &.headroom--top,
+  &.headroom--pinned
+    transform translate3d(0, 0%, 0)
+  &.headroom--not-top.headroom--unpinned
+    transform translate3d(0, -51px, 0) // the 1 is for the border
+
+#hdr-logo
+  background-position 0 12px
+  display block
+  height 50px
+  margin 0 auto
+  position relative
+  width 120px
+
+#logo-bar
+  background white
+  height 50px
+  position relative
+  .visually-hidden
+    absolute top 16px
+    font-family proxima
+
+#nav-tog
+  left 13px
+  .visually-hidden
+    left 50px
+
+#search-tog
+  left 46px
+  display none
+  &:before
+    absolute top 50% left 0
+    content ''
+  +media('tab-plus')
+    display block
+
+.subscribe // cause im lazy
+  absolute top 13px right 13px
+  &:hover
+    background old-blue
+    color white
+
+// nav-tog, search-tog
+.toggle
+  absolute top 15px
+  cursor pointer
+  z-index 99
+  &:hover
+    transform scale3d(.9, .9, .9)
+
+// this is the bit that shows / hides the article headline on articles
++media('tab-plus')
+  .single
+    #global-header
+      &.headroom--not-top.headroom--unpinned
+        transform translate3d(0, 0, 0)
+      &.headroom--not-top.nav-active,
+      &.headroom--not-top.search-active
+        #global-nav
+          display block
+      &.headroom--not-top
+        #global-nav,
+        #hdr-logo
+          display none
+        #article-title
+          display block
+
+
+
+
+
+
+// .boxes
+//   transition(box-shadow)
+//   background rgba(0, 0, 0, .4)
+//   color rgba(0, 0, 0, .4)
+//   display inline-block
+//   box-shadow -8px 0, -8px 8px, 8px 0, 8px -8px, 0 -8px, -8px -8px, 0 8px, 8px 8px
+//   height 5px
+//   position relative
+//   // transition box-shadow .3s
+//   width 5px
+//   .nav-active &
+//     box-shadow 0 -2px, 0 -4px, 0 -6px, 0 -8px, 0 -10px, 0 2px, 0 4px, 0 6px, 0 8px, 0 10px, 2px 0, 4px 0, 6px 0, 8px 0, 10px 0, -2px 0, -4px 0, -6px 0, -8px 0, -10px 0
+//     height 2px
+//     transform rotate3d(0, 0, 1, -45deg) scale3d(1.1, 1.1, 1.1)
+//     // transition box-shadow .3s
+//     width 2px
+
+// .alt-logo
+//   @extends $uri-squareLogo
+//   absolute top 0 left 0
+//   display none
+//   height 50px
+//   max-height 50px
+//   width 50px
+
+// .search-link
+//   display block
+//   position relative
+//   &:before,
+//   &:after
+//     content ''
+//     display inline-block
+//     position absolute
+//   &:before
+//     background transparent
+//     border-radius 12px
+//     border 2px solid rgba(0, 0, 0, .4)
+//     height 20px
+//     left 7px
+//     width 20px
+//   &:after
+//     background rgba(0, 0, 0, .4)
+//     height 13px
+//     left 5px
+//     top 13px
+//     transform rotate(45deg)
+//     width 2px
+//   .search-active &
+//     &:before
+//       background rgba(0, 0, 0, .4)
+//       border-radius 0
+//       border none
+//       transform rotate(-45deg)
+//     &:before,
+//     &:after
+//       height 2px
+//       left 0
+//       top 10px
+//       width 26px
+
+// #collapsed-logo
+//   float left
+//   height 25px
+//   margin 0
+//   opacity .25
+//   position absolute
+//   transform translate3d(-118%, 0, 0)
+
+// .single
+//   #global-header
+//     &.headroom--not-top.nav-active,
+//     &.headroom--not-top.search-active
+//       #global-nav
+//         display block
+
+// .x
+//   background rgba(0, 0, 0, 1)
+//   box-shadow 0 -2px, 0 -4px, 0 -6px, 0 -8px, 0 -10px, 0 2px, 0 4px, 0 6px, 0 8px, 0 10px, 2px 0, 4px 0, 6px 0, 8px 0, 10px 0, -2px 0, -4px 0, -6px 0, -8px 0, -10px 0
+//   color rgba(0, 0, 0, 1)
+//   display inline-block
+//   height 2px
+//   transform rotate3d(0, 0, 1, -45deg) scale3d(1.1, 1.1, 1.1)
+//   transition box-shadow .3s
+//   width 2px
+
+// section name next to logo on section fronts
+// .section-name
+//   border-left 1px solid dark-gray
+//   display none
+//   float left
+//   font-family oxide
+//   font-size 10px
+//   height 25px
+//   margin-left 12px
+//   padding-left 13px
+//   padding-top 8px
+//   @media (min-width 480px)
+//     display block
+
+
+// .brand-bar,
+// .search
+//   #header-logo
+//     width 120px
+// .ham
+//   background black
+//   display inline-block
+//   height 3px
+//   position relative
+//   transition .3s
+//   width 26px
+//   &:before,
+//   &:after
+//     background black
+//     content ''
+//     display inline-block
+//     height 3px
+//     position absolute
+//     transform-origin center
+//     transition .3s
+//     width 26px
+//   &:before
+//     top 7px
+//   &:after
+//     top -7px
+//   &.white
+//     background white
+//     &:before,
+//     &:after
+//       background white
+
+
+// .ham,
+// .search-link
+//   &.nav-active
+//     background transparent
+//     margin-bottom 7px
+//     transition .3s
+//     &:before,
+//     &:after
+//       transition .3s
+//       transform-origin 50%
+//     &:before
+//       transform rotate3d(0, 0, 1, 45deg)
+//     &:after
+//       top 7px
+//       transform rotate3d(0, 0, 1, -45deg)
+// .section-name-alt
+//   absolute left 50% top 16px
+//   font-family proxima
+//   font-size 18px
+//   margin-left -19px
+
+// .close
+//   display inline
+//   &:before
+//     transform rotate3d(0, 0, 1, -45deg)
+//   &:after
+//     top: 7px
+//     transform rotate3d(0, 0, 1, 45deg)
+
+// .grid-menu
+//   .search-link
+//     &:before
+//       border 3px solid black
+//     &:after
+//       height 10px
+//       left 18px
+//       top 14px
+//       width 3px
+
+// .close
+//     @extends $transition
+//     absolute top 10px left 13px
+//     background transparent
+//     display inline-block
+//     height: 4px
+//     margin: 7px 0px
+//     width: 26px
+//     &:before,
+//     &:after
+//       absolute top 0 left 0
+//       background: white
+//       content: ''
+//       display inline-block
+//       height: 4px
+//       -webkit-transform-origin: 50% 50%
+//       transform-origin: 50% 50%
+//       width: 26px
+//     &:before
+//       top: 7px
+//       transform: rotate3d(0, 0, 1, -45deg)
+//     &:after
+//       top: 7px
+//       transform: rotate3d(0, 0, 1, 45deg)
+
+
+
+// #header-sub-menu
+//   @extends $meta-text
+//   absolute top 20px left 50px
+//   display none
+//   @media (min-width 480px)
+//     display block
+//   li
+//     display none
+//     opacity 0
+//     &.active
+//       display block
+//       opacity 1'
+
+// .billboard-ad-test.above,
+// .billboard-ad-test.both
+//   #global-header.headroom--not-top.headroom--unpinned
+//     transform translate3d(0, -325px, 0)
+
+// mockups @TODO remove eventually
+// .billboard-ad-test
+//   &.both,
+//   &.above
+//     #global-header
+//       &.headroom--not-top.headroom--pinned
+//         transform translate3d(0, -276px, 0)
+//       &.headroom--not-top.headroom--unpinned
+//         transform translate3d(0, -326px, 0)
+//       @media (max-width 728px)
+//         .ad
+//           display none
+//   &.both
+//     #global-header
+//       @media (max-width 960px)
+//         .ad
+//           display none
+//     .leaderboard
+//       @media (min-width: 960px)
+//         margin-top 275px
+//   &.above
+//     #post-header
+//       padding-top 313px
+
+  // &.both,
+  // &.below
+  //   #post-header
+  //     padding-top 50px
+
+
+  // .section-alt-4
+//   #logo-bar
+//     background biz
+//   #global-nav
+//     background biz
+//     border-top 1px solid rgba(255, 255, 255, .5)
+//     #nav-sections
+//       li
+//         border-right 1px solid rgba(255, 255, 255, .5)
+//         &:first-of-type
+//           border-left 1px solid rgba(255, 255, 255, .5)
+//         &.current
+//           background white
+//       i,
+//       span
+//         color rgba(0, 0, 0, .5)
+//       li:hover
+//         i,
+//         span
+//           color black
+//       #collapsed-logo
+//         opacity 1
+//     #secondary-sections
+//       border-top 1px solid rgba(255, 255, 255, .5)
+//       a
+//         color rgba(0, 0, 0, .5)
+//         &:hover
+//           color black
+//   .subscribe-button
+//     opacity .5
+//     &:hover
+//       background black

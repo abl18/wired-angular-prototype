@@ -1,0 +1,160 @@
+/**
+ * Helper classes (floats, clears, colors, blah blah)
+*/
+
+// color helperz
+for key, value in (all-colors)
+  .{key}
+    color value
+  .{key}-bg
+    background value
+
+// proxima uppercase author bylines
+.author,
+.attribution,
+.byline
+  @extends $meta-text
+
+.clearfix
+  *zoom 1
+  &:before
+  &:after
+    content ''
+    display table
+  &:after
+    clear both
+
+// inline credit for captions (photographer, illustrator, etc)
+.credit
+  @extends $credit
+
+// css X
+// .close
+//   transition(opacity)
+//   background rgba(0, 0, 0, 1)
+//   box-shadow 0 -2px, 0 -4px, 0 -6px, 0 -8px, 0 -10px, 0 2px, 0 4px, 0 6px, 0 8px, 0 10px, 2px 0, 4px 0, 6px 0, 8px 0, 10px 0, -2px 0, -4px 0, -6px 0, -8px 0, -10px 0
+//   color rgba(0, 0, 0, 1)
+//   display inline-block
+//   height 2px
+//   transform rotate3d(0, 0, 1, -45deg) scale3d(1.1, 1.1, 1.1)
+//   width 2px
+//   &:hover
+//     cursor pointer
+//     opacity .5
+
+.float-l
+  float left
+
+.float-r
+  float right
+
+.hdr
+  @extends $sub-header
+  border-bottom 1px solid lighter-gray
+  padding 13px
+
+/**
+ * used when we want to combine transforms / transitions with display none or display block
+ * relies on the prepareTransition jQuery plugin
+*/
+.is-transitioning
+  display block!important
+  visibility visible!important
+
+// remove list styles from article lists
+.list-none
+  list-style none!important
+  li:before
+    content ''!important
+    margin 0!important
+    width 0!important
+
+.margin-bottom
+  margin-bottom 25px
+
+.margin-top
+  margin-top 25px
+
+// general meta text everywhere
+.meta
+  @extends $meta-text
+  display block
+  white-space nowrap
+
+.no-border
+  border none!important
+.no-margin
+  margin 0!important
+.no-margin-top
+  margin-top 0!important
+.no-padding
+  padding 0!important
+.no-padding-top
+  padding-top 0!important
+.no-scroll
+  overflow hidden
+.padding
+  padding 13px
+.padding-big
+  padding 25px
+.padding-bottom
+  padding-bottom 13px
+.padding-left-big
+  padding-left 25px
+.padding-left-right
+  padding-left 13px
+  padding-right 13px
+.padding-top
+  padding-top 13px
+.no-padding-top
+  padding-top 0!important
+
+.hide
+  display none!important
+
+.show
+  display block!important
+
+.text-center
+  text-align center
+
+// class version for applying via js / production
+.visually-hidden
+  @extends $visually-hidden
+
+// mobile > small tablet helpers
++media('mob')
+  .hide-mobile
+    display none!important
+  .show-mobile
+    display block
+
+// small tablet helpers
++media('small-tab')
+  .hide-small-tablet
+    display none!important
+  .show-small-tablet
+    display block
+  // .small-tablet-omega
+  //   margin-left 0!important
+  //   margin-right 0!important
+
+// tablet helpers
++media('tab')
+  .hide-tablet
+    display none!important
+  .show-tablet
+    display block
+  // .tablet-omega
+  //   margin-left 0!important
+  //   margin-right 0!important
+
+// desktop helpers
++media('lap-plus')
+  .hide-desktop
+    display none!important
+  .show-desktop
+    display block
+  // .desktop-omega
+  //   margin-left 0!important
+  //   margin-right 0!important

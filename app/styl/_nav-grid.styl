@@ -1,0 +1,260 @@
+// nav styles for grid option
+// @TODO general cleanup once we settle on a nav option
+
+// #global-header-left
+//   absolute top 15px left 13px
+//   min-width 40%
+//   #grid-link
+//     float left
+
+// #global-header-right,
+// .nav-search
+//   absolute top 13px right 13px
+//   cursor pointer
+
+// #grid-nav
+//   @extends $transition-opacity
+//   @extends $meta-text
+//   background rgba(0, 0, 0, .9)
+//   color white
+//   display none
+//   fixed top 0 right 0 bottom 0 left 0
+//   opacity 0
+//   overflow-y scroll
+//   text-align center
+//   z-index 999999998
+//   .brand-bar-alt &
+//     z-index 9999999999
+//     top 50px
+//   &.active
+//     display block
+//     opacity 1
+//   li
+//     @extends $transition
+//     background rgba(0, 0, 0, 1)
+//     border-bottom 3px solid transparent
+//   i
+//     clear both
+//     display block
+//     font-size 72px
+//     @media (min-width 480px)
+//       font-size 120px
+//   .menu-close
+//     @extends $transition
+//     absolute top 10px left 13px
+//     background transparent
+//     cursor pointer
+//     display inline-block
+//     height: 26px
+//     margin: 7px 0px
+//     width: 26px
+//     &:hover
+//       opacity .5
+//     &:before,
+//     &:after
+//       absolute top 0 left 0
+//       background: white
+//       content: ''
+//       display inline-block
+//       height: 4px
+//       -webkit-transform-origin: 50% 50%
+//       transform-origin: 50% 50%
+//       width: 26px
+//     &:before
+//       top: 7px
+//       transform: rotate3d(0, 0, 1, -45deg)
+//     &:after
+//       top: 7px
+//       transform: rotate3d(0, 0, 1, 45deg)
+
+// .grid-white,
+// .grid-half
+//   #grid-nav.search-active
+//     background rgba(255, 255, 255, .95)
+//     #s
+//       color black
+
+// #grid-nav.search-active
+//   #secondary-sections
+//     display none !important
+
+// .grid-white
+//   // #grid-sections
+//   //   margin-top 75px
+//   #grid-search
+//     #s,
+//     label
+//       color black
+//   #grid-nav
+//     background rgba(255, 255, 255, .98)
+//     .menu-close
+//       &:before,
+//       &:after
+//         background black
+
+// #grid-sections
+//   @extends $clearfix
+//   display none
+//   margin 75px 25px 13px
+//   opacity 0
+//   &.active
+//     display block
+//     opacity 1
+//   .has-new-icons &
+//     li
+//       img
+//         margin 0 auto
+//         max-width 200px
+//       a
+//         @media (min-width 520px) and (max-height 760px)
+//           padding 0 0 13px !important
+//   @media (min-width 520px)
+//     margin 75px auto 13px
+//     max-width 480px
+//   @media (min-width 748px)
+//     max-width 728px
+//   @media (min-width 1010px)
+//     max-width 970px
+//   a
+//     display block
+//     font-size 14px
+//     padding 35px 0
+//     @media (min-width 520px) and (max-height 760px)
+//       padding 35px 0 !important
+//     @media (min-width 748px)
+//       padding 55px 0
+//     @media (min-width 1010px)
+//       padding 75px 0 100px
+//   // THEY TOLD ME THERE WOULDNT BE MATH
+//   li
+//     float left
+//     margin 0 13px 13px 0
+//     width calc((50% - 13px) + (13px / (12 / 4)))
+//     &:nth-child(2n+2)
+//       margin-right 0
+//       @media (min-width 748px)
+//         margin-right 13px
+//     &:nth-child(3n+3)
+//       @media (min-width 748px)
+//         margin-right 0
+//     @media (min-width 748px) and (max-width 1010px)
+//       width calc((242px - 13px) + (13px / (12 / 4)))
+//     @media (min-width 1010px)
+//       width calc((323px - 13px) + (13px / (12 / 4)))
+
+
+// .grid-white
+//   #grid-sections
+//     li
+//       background transparent !important
+//       color black
+//     a
+//       @media (min-width 1010px)
+//         padding 25px 0 50px
+
+//   #secondary-sections
+//     a:hover
+//       color black
+
+
+
+// // mostly the same in both nav mockups, but this is mostly grid
+// #secondary-sections
+//   @extends $clearfix
+//   @extends $site-container
+//   clear both
+//   display none
+//   width 715px
+//   opacity 0
+//   &.active
+//     display block
+//     opacity 1
+//   @media (max-width 748px)
+//     max-width 80%
+//   li
+//     margin-bottom 25px
+//     // for grid mockup
+//     &:nth-child(3n+3)
+//       @media (max-width 1010px)
+//         margin-right 0
+//   a
+//     color light-gray
+//     font-size 12px
+//     margin 0 0 25px
+//     padding 0 13px
+//     &:hover
+//       color white
+//     @media (max-width 748px)
+//       clear both
+//       display block
+//       float none
+
+
+// text sub menu on the left for brand menu option (prolly being killed)
+// #nav-sub-menu
+//   @extends $meta-text
+//   absolute top 0 bottom 0 left 0
+//   background rgba(0, 0, 0, 1)
+//   border-right 1px solid dark-gray
+//   padding 2px 0 0 7px
+//   user-select none
+//   width 155px
+//   z-index 2
+//   .menu-expanded &
+//     padding 9px 7px 7px
+//   li
+//     padding 5px
+//     &.active,
+//     &:hover
+//       color white
+//     &:hover
+//       cursor pointer
+
+// #grid-search
+//   @extends $proxima
+//   absolute top 50% left 50%
+//   display none
+//   height 250px
+//   margin-top -(@height / 2)
+//   opacity 0
+//   text-align center
+//   width 50%
+//   margin-left -(@width / 2)
+//   &.active
+//     display block
+//     opacity 1
+//   input
+//     @extends $transition
+//     -moz-appearance none
+//     -webkit-appearance none
+//     background transparent
+//     border 0
+//     border-radius 0
+//     color white
+//     font-size 10em
+//     height 250px
+//     letter-spacing .02em
+//     opacity .75
+//     padding 0
+//     text-align center
+//     width 100%
+//     &:hover,
+//     &:focus
+//       opacity 1
+//       outline 0
+//     &:focus + label
+//       opacity .2
+//     &:valid + label
+//       transform(translate3d(-3em, 0, 0))
+//       opacity 0
+//   label
+//     @extends $transition-slow
+//     absolute top 50% right 0 left 0
+//     color white
+//     font-size 10em
+//     letter-spacing .02em
+//     opacity .5
+//     text-transform none
+//     &:hover
+//       cursor text
+//       opacity 1

@@ -1,0 +1,60 @@
+/**
+ * Grid system, flexbox specs
+*/
+
+gutter = 13px
+total-columns = 12
+
+col-width(column-index)
+  init-value = (100% / total-columns) * column-index
+  // the one annoying thing about stylus: weak interpolation workarounds
+  final-value = s('calc((%s - %s) + (%s / (%s / %s)))', init-value, gutter, gutter, total-columns, column-index)
+  return final-value
+
+.row
+  @extends $clearfix
+  display flex
+  flex-direction vertical
+  &.horizontal // set direction to horizontal
+    flex-direction horizontal
+  &.vertical // set direction to vertical
+    flex-direction vertical
+  &.wrap
+    flex-wrap wrap
+  .col
+    flex auto
+
+.col
+  position relative
+  +media('tab-max')
+    width 100%
+
+// tablet range grid
++media('tab')
+  for i in (1)..(total-columns)
+    .t-col-{i}
+      width col-width(i)
+  .t-col-12
+    margin-right 0!important
+
+// bigger than tablet
++media('tab-plus')
+  .row
+    flex-direction horizontal
+  .col
+    float left
+    margin-right gutter
+    &:last-child
+      margin-right 0
+
++media('lap-max')
+  .row
+    flex-wrap wrap
+
+// desktop grid
++media('lap-plus')
+  for i in (1)..(total-columns)
+    .d-col-{i}
+      width col-width(i)
+  .d-col-12
+    margin-right 0!important

@@ -1,0 +1,123 @@
+.ui-arrow-std {
+	width: 32px;
+	height: 32px;
+	background-position: 0 0;
+}
+
+.ui-twit-std {
+	width: 32px;
+	height: 32px;
+	background-position: -100px 0;
+}
+
+.ui-close-circle-std {
+	width: 32px;
+	height: 32px;
+	background-position: -200px 0;
+}
+
+.ui-close-std {
+	width: 32px;
+	height: 32px;
+	background-position: -300px 0;
+}
+
+.ui-comments-active-std {
+	width: 32px;
+	height: 32px;
+	background-position: -400px 0;
+}
+
+.ui-comments-std {
+	width: 32px;
+	height: 32px;
+	background-position: -500px 0;
+}
+
+.ui-fb-active-std {
+	width: 32px;
+	height: 32px;
+	background-position: -600px 0;
+}
+
+.ui-fb-std {
+	width: 32px;
+	height: 32px;
+	background-position: -700px 0;
+}
+
+.ui-info-std {
+	width: 32px;
+	height: 32px;
+	background-position: -800px 0;
+}
+
+.ui-box-std {
+	width: 32px;
+	height: 32px;
+	background-position: -900px 0;
+}
+
+.ui-twit-active-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1000px 0;
+}
+
+.ui-mail-active-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1100px 0;
+}
+
+.ui-mail-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1200px 0;
+}
+
+.ui-more-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1300px 0;
+}
+
+.ui-pint-active-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1400px 0;
+}
+
+.ui-pint-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1500px 0;
+}
+
+.ui-search-std {
+	width: 32px;
+	height: 32px;
+	background-position: -1600px 0;
+}
+
+.ui-logo-std {
+	width: 150px;
+	height: 32px;
+	background-position: -1700px 0;
+}
+
+.ui-logo-reversed-std {
+	width: 150px;
+	height: 32px;
+	background-position: -1900px 0;
+}
+
+.ui-arrow-std, .ui-twit-std, .ui-close-circle-std, .ui-close-std, .ui-comments-active-std, .ui-comments-std, .ui-fb-active-std, .ui-fb-std, .ui-info-std, .ui-box-std, .ui-twit-active-std, .ui-mail-active-std, .ui-mail-std, .ui-more-std, .ui-pint-active-std, .ui-pint-std, .ui-search-std, .ui-logo-std, .ui-logo-reversed-std {
+	background-size: 2100px 100px;
+	background-repeat: no-repeat;
+	background-image: url("../ui-dist-sprite-std.png");
+}
+
+.svg .ui-arrow-std, .svg .ui-twit-std, .svg .ui-close-circle-std, .svg .ui-close-std, .svg .ui-comments-active-std, .svg .ui-comments-std, .svg .ui-fb-active-std, .svg .ui-fb-std, .svg .ui-info-std, .svg .ui-box-std, .svg .ui-twit-active-std, .svg .ui-mail-active-std, .svg .ui-mail-std, .svg .ui-more-std, .svg .ui-pint-active-std, .svg .ui-pint-std, .svg .ui-search-std, .svg .ui-logo-std, .svg .ui-logo-reversed-std {
+	background-image: url("../ui-dist-sprite.svg");
+}

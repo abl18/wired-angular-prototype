@@ -1,0 +1,97 @@
+/**
+ * Global footer
+*/
+
+#footer-logo
+  margin 0 auto
+  width 120px
+
+#footer-social
+  display none
+  +media('mob-plus')
+    display block
+  li
+    margin 0 25px 0 0
+    width 50px
+    &:last-child
+      margin 0
+
+#footer-tab
+  transition(all)
+  @extends $meta-text
+  background white
+  border 1px solid lightest-gray
+  // border-top-left-radius 15%
+  // border-top-right-radius 15%
+  box-shadow 0 0 2px light-gray
+  display none
+  fixed right 13px bottom -3px
+  opacity .75
+  padding 7px 13px 10px
+  white-space nowrap
+  z-index 99999
+  +media('tab-plus')
+    display block
+  &:hover
+    bottom 0
+    opacity 1
+  &.active
+    border none
+    box-shadow none
+    bottom 200px
+    .ui-info
+      background-position-x -180px
+  img
+    transition(opacity)
+    opacity .5
+    width 30px
+
+#global-footer
+  transition(transform)
+  @extends $meta-text
+  background white
+  box-shadow 0 4px 20px 0 rgba(206, 206, 206, .75)
+  cursor pointer
+  fixed right 0 bottom 0 left 0
+  line-height 14px
+  padding 25px 0
+  text-align center
+  width 100%
+  z-index 9999
+  +media('tab-max')
+    display block
+    position relative
+  +media('tab-plus')
+    transform translate3d(0, 100%, 0)
+  &.active
+    +media('mob-plus')
+      transform translate3d(0, 0%, 0)
+  a
+    white-space nowrap
+    &:hover
+      color black
+  p,
+  ul
+    @extends $site-container
+  ul
+    margin 25px auto
+  li
+    display inline-block
+  .sitemap
+    li
+      margin-right 7px
+
+
+
+
+
+
+// #footerToggle
+//   @extends $transition-slow
+//   fixed right 25px bottom 25px
+//   opacity .5
+//   width 35px
+//   &:hover
+//     opacity 1
+//   @media (min-width 480px)
+//     width 50px

@@ -1,0 +1,164 @@
+<header id='global-header' role='banner' data-headroom ng-include="'partials/global/header.html'"></header>
+
+<div id="header728x90_frame" class="rad-top rad leaderboard" data-rad data-headroom data-loc="header" data-sz="728x90" data-kws="top" data-collapse="false" data-cb-ad-id="header728x90_frame"></div>
+
+<main id="grid" role="main" ng-controller='GridCtrl'>
+    <section>
+        <h1 class="hdr hide-small-tablet hide-small-tablet hide-tablet hide-desktop">Top Stories</h1>
+
+        <div class="asymmetrical row" data-items="2">
+            <div class="card col t-col-12 d-col-8">
+                <a href="{{articles[0].link}}">
+                    <img ng-src="{{articles[0].featured_image.source}}" />
+                    <span class="meta">{{articles[0].terms.category[0].name}}</span>
+                    <h2 class="title" ng-bind-html="articles[0].title"></h2>
+                    <span class='meta time'>{{articles[0].date}}</span>
+                </a>
+            </div>
+            <div class="card col t-col-12 d-col-4">
+                <a href="{{articles[1].link}}">
+                    <img ng-src="{{articles[1].featured_image.source}}" />
+                    <span class="meta">{{articles[1].terms.category[0].name}}</span>
+                    <h2 class="title" ng-bind-html="articles[1].title"></h2>
+                    <span class='meta time'>{{articles[1].date}}</span>
+                </a>
+            </div>
+        </div>
+        <div class="asymmetrical row" data-items="3">
+            <div class="card col t-col-12 d-col-5">
+                <a href="{{articles[2].link}}">
+                    <img ng-src="{{articles[2].featured_image.source}}" />
+                    <span class="meta">{{articles[2].terms.category[0].name}}</span>
+                    <h2 class="title" ng-bind-html="articles[2].title"></h2>
+                    <span class='meta time'>{{articles[2].date}}</span>
+                </a>
+            </div>
+            <div class="col t-col-12 d-col-7">
+                <div class="card">
+                    <a href="{{articles[3].link}}">
+                        <img ng-src="{{articles[3].featured_image.source}}" />
+                        <span class="meta">{{articles[3].terms.category[0].name}}</span>
+                        <h2 class="title" ng-bind-html="articles[3].title"></h2>
+                        <span class='meta time'>{{articles[3].date}}</span>
+                    </a>
+                </div>
+                <div class="card sponsored">
+                    <a href="{{articles[4].link}}">
+                        <img ng-src="{{articles[4].featured_image.source}}" />
+                        <span class="meta">{{articles[4].terms.category[0].name}}</span>
+                        <h2 class="title" ng-bind-html="articles[4].title"></h2>
+                        <span class='meta time'>{{articles[4].date}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class='card smart' ng-controller='RecircCtrl'>
+          <h4 class='hdr'><a href='/'>Latest News</a></h4>
+
+          <ul class='story-list'>
+            <li ng-repeat='article in recirc track by article.ID' ng-animate="{enter: 'ng-enter', leave: 'ng-leave'}">
+              <a ui-sref="#/article.detail({ id: article.ID})">
+                <img class='thumb' ng-src="{{article.featured_image.attachment_meta.sizes.thumbnail.url}}" />
+
+                <div class='post-wrap'>
+                  <span class='meta'>{{article.terms.category[0].name}}</span>
+                  <h5 class='title' ng-bind-html="article.title"></h5>
+                  <span class='meta time'>{{article.date}}</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <a class='more' ng-href='#/latestNews/'>
+            <span>More News</span>
+          </a>
+        </div>
+    </section>
+
+    <section class="reversed">
+        <div class="asymmetrical row" data-items="3">
+            <div class="card col text t-col-12 d-col-5 active">
+                <a href="{{articles[5].link}}">
+                    <i class="icon security"></i>
+                    <div class="post-wrap">
+                        <h2 class="author">{{articles[5].author.name}}</h2>
+                        <h3 class="headline" ng-bind-html="articles[5].title"></h3>
+                        <span class='meta time'>{{articles[5].date}}</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col t-col-12 d-col-7">
+                <div class="card image-left active">
+                    <a href="{{articles[6].link}}">
+                        <img ng-src="{{articles[6].featured_image.source}}">
+                        <span class="meta">{{articles[6].terms.category[0].name}}</span>
+                        <h2 class="title" ng-bind-html="articles[6].title"></h2>
+                        <span class='meta time'>{{articles[6].date}}</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="{{articles[7].link}}">
+                        <img ng-src="{{articles[7].featured_image.source}}">
+                        <span class="meta">{{articles[7].terms.category[0].name}}</span>
+                        <h2 class="title" ng-bind-html="articles[7].title"></h2>
+                        <span class='meta time'>{{articles[7].date}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="asymmetrical row" data-items="2">
+            <div class="card col d-col-4 t-col-12">
+                <a href="{{articles[8].link}}">
+                    <img ng-src="{{articles[8].featured_image.source}}">
+                    <span class="meta">{{articles[8].terms.category[0].name}}</span>
+                    <h2 class="title" ng-bind-html="articles[8].title"></h2>
+                    <span class='meta time'>{{articles[8].date}}</span>
+                </a>
+            </div>
+            <div class="card col d-col-8 t-col-12 active">
+                <a href="{{articles[9].link}}">
+                    <img ng-src="{{articles[9].featured_image.source}}">
+                    <span class="meta">{{articles[9].terms.category[0].name}}</span>
+                    <h2 class="title" ng-bind-html="articles[9].title"></h2>
+                    <span class='meta time'>{{articles[9].date}}</span>
+                </a>
+            </div>
+        </div>
+        <div class='card smart' ng-controller='RecircCtrl'>
+          <h4 class='hdr'><a href='/'>Latest News</a></h4>
+
+          <ul class='story-list'>
+            <li ng-repeat='article in recirc track by article.ID' ng-animate="{enter: 'ng-enter', leave: 'ng-leave'}">
+              <a ui-sref="#/article.detail({ id: article.ID})">
+                <img class='thumb' ng-src="{{article.featured_image.attachment_meta.sizes.thumbnail.url}}" />
+
+                <div class='post-wrap'>
+                  <span class='meta'>{{article.terms.category[0].name}}</span>
+                  <h5 class='title' ng-bind-html="article.title"></h5>
+                  <span class='meta time'>{{article.date}}</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <a class='more' ng-href='#/latestNews/'>
+            <span>More News</span>
+          </a>
+        </div>
+    </section>
+</main>
+
+<aside id="prefooter" role="complementary" ng-include="'partials/global/prefooter.html'"></aside>
+
+<a id='footer-tab' href='javascript:;' data-js='footerToggle'>
+  <span class='ui ui-info'></span>
+</a>
+
+<a class='section-tab prev' href='single-gallery.html'>
+  <div class='ui ui-arrow'></div>
+</a>
+<a class='section-tab next' href='single-wide.html'>
+  <div class='ui ui-arrow'></div>
+</a>
+
+<footer data-js='footerToggle' id='global-footer' ng-include="'partials/global/footer.html'"></footer>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>Test App</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel='stylesheet' href='css/style.css'/>
+    </head>
+
+    <body class='grid home' ng-app='wiredApp'>
+
+    <header id='global-header' role='banner' data-headroom ng-include="'partials/global/header.html'"></header>
+
+    <div ng-controller="ReactCtrl">
+        <react-component name="HelloComponent" props="person" />
+    </div>
+
+    <div id="header728x90_frame" class="rad-top rad leaderboard" data-rad data-headroom data-loc="header" data-sz="728x90" data-kws="top" data-collapse="false" data-cb-ad-id="header728x90_frame"></div>
+
+    <main id="grid" role="main" ng-controller='GridCtrl'>
+        <section>
+            <div class="article-group" ui-view='primary'></div>
+            <aside ui-view='recircNews'></aside>
+        </section>
+
+        <section ui-view='middle'></section>
+
+        <section class="reversed">
+            <div class="article-group" ui-view='secondary'></div>
+            <aside ui-view='recircNews'></aside>
+        </section>
+    </main>
+
+    <aside id="prefooter" role="complementary" ng-include="'partials/global/prefooter.html'"></aside>
+
+    <a id='footer-tab' href='javascript:;' data-js='footerToggle'>
+      <span class='ui ui-info'></span>
+    </a>
+
+    <a class='section-tab prev' href='single-gallery.html'>
+      <div class='ui ui-arrow'></div>
+    </a>
+    <a class='section-tab next' href='single-wide.html'>
+      <div class='ui ui-arrow'></div>
+    </a>
+
+    <footer data-js='footerToggle' id='global-footer' ng-include="'partials/global/footer.html'"></footer>
+
+
+<script src="../bower_components/jquery2/jquery.min.js"></script>
+<script src="../bower_components/lodash/dist/lodash.compat.min.js"></script>
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="../bower_components/ui-router/release/angular-ui-router.min.js"></script>
+<!-- <script src="../bower_components/angular-route/angular-route.min.js"></script> -->
+<script src="../bower_components/angular-local-storage/angular-local-storage.min.js"></script>
+
+<script src="../bower_components/react/react.js"></script>
+<script src="../bower_components/react/JSXTransformer.js"></script>
+<script src="../node_modules/ngReact/ngReact.min.js"></script>
+
+<script src="js/dist/app.js"></script>
+
+</body>
+</html>

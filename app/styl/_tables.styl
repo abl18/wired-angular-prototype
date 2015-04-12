@@ -1,0 +1,22 @@
+/**
+ * Legacy support for tables
+*/
+
+// Remove most spacing between table cells.
+table
+    border-collapse collapse
+    border-spacing 0
+    font-size .750em
+    line-height 1.35
+    width 100%
+    th
+        @extends $proxima
+    th,
+    td
+        border 1px solid $light-gray
+        padding .4em .25em
+
+.table-wrapper
+    max-width 100%
+    -webkit-overflow-scrolling touch
+    overflow-x scroll

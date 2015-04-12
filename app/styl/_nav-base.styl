@@ -1,0 +1,48 @@
+/**
+ * base nav styles
+*/
+
+for key, value in (section-colors)
+  .{key}
+    #global-nav
+      li.{key}
+        background value
+        color black
+        img
+          opacity 1
+        i,
+        span
+          color black
+  li.{key}:hover
+    background value
+    i,
+    span
+      color black
+
+#global-nav
+  transition(height)
+  background white
+  border-top 1px solid lightest-gray
+  height 25px
+  -webkit-font-smoothing antialiased
+  overflow-y scroll
+  position relative
+  +media('tab-max')
+    display none
+  +media('tab-plus')
+    overflow hidden
+  .nav-active &
+    height 137px
+    +media('tab-max')
+      display block
+      height 100%
+  li:hover
+    a,
+    i,
+    span
+      color black
+    &.security
+      a,
+      i,
+      span
+        color white

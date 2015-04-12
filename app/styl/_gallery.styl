@@ -1,0 +1,322 @@
+/**
+ * All gallery types
+ * Expandable, Inline Galleries, Fullscreen
+ * @TODO clean up / consolidate
+*/
+
+// full screen gallery wrap
+#expandable-gallery,
+#featured-gallery
+  border-bottom 0
+  display none
+  fixed top 50px right 0 bottom 0 left 0
+  z-index 99999999999
+  .ad
+    padding 13px 0
+  img
+    max-height 100%
+  .close
+    absolute top 10px right 10px
+    cursor pointer
+    width 30px
+    z-index 999
+  .gallery-arrow
+    top 100px
+    width 25%
+    &.left
+      img
+        left 25px
+    &.right
+      img
+        right 25px
+    img
+      width 40px
+      margin-top -40px
+  .slide
+    absolute top 0 right 0 bottom 0 left 0
+    visibility hidden
+    &.active
+      visibility visible
+// full screen gallery
+
+
+// fullscreen gallery with white bg
+#expandable-gallery
+  background rgba(255, 255, 255, .97)
+  .caption
+    text-align center
+  .gallery-arrow
+    bottom 0
+// end full
+
+// fullscreen gallery with black bg
+#featured-gallery
+  background gallery-gray
+  .gallery-overflow
+    top 113px
+    img
+      height 100%
+  .slide-info,
+  .slide-counter
+    padding-top 0
+  .gallery-arrow
+    bottom 75px
+    img
+      margin-top -70px
+// end featured gallery
+
+#featured-gallery.hud-expanded
+  .gallery-arrow
+    bottom 125px
+
+// bar at bottom of black gallery
+.full-view-hud
+  transition(height)
+  background black
+  cursor pointer
+  height 75px
+  &:hover
+    height 80px
+    .meta
+      color white
+  .v-1 &
+    position relative
+  .v-2 &
+    fixed right 0 bottom 0 left 0
+  .hud-expanded &
+    box-shadow -4px 4px 20px 0 black
+    height 150px
+  .slide-counter
+    absolute top 27px left 138px
+    padding 0
+    width auto
+// end hud
+
+.slide-info-wrapper
+  -webkit-font-smoothing antialiased
+
+.expand-wrap
+  margin 0 auto
+  padding-bottom 25px
+  width 160px
+
+// wrapper for centering inside hud
+.hud-wrapper
+  height 75px
+  margin 0 25px
+  padding 13px 0
+  position relative
+// end wrapper
+
+// self explanatory
+#full-view-logo
+  absolute top 23px left 0
+  height 25px
+  padding 0
+  // .gallery.v-2 &
+  //   height 25px
+  //   padding 0
+// end logo
+
+// expand / collapse button for hud
+.expand-hud
+  absolute top 30px left 0
+  z-index 999
+  .gallery.v-2 &
+    left auto
+    right 100px
+// end expand
+
+// headline in full-view mode
+.full-view-header
+  color white
+  font-family proxima
+  font-size 24px
+  -webkit-font-smoothing antialiased
+  line-height 28px
+  margin 0 auto
+  padding 5px 0 0
+  text-align center
+// end headline
+
+// black gallery social icons
+.full-view-social
+  absolute top 25px right 0
+  display none
+  height 20px
+  +media('tab-plus')
+    display block
+  li
+    float left
+    margin-right 13px
+    &:last-of-type
+      margin 0
+  img
+    width 20px
+// end full-view social
+
+// gallery base
+.gallery
+  @extends $caption
+  border-bottom 1px solid lightest-gray
+  user-select none
+  .slide
+    transition(opacity)
+    opacity 0
+    &.active
+      opacity 1
+  &.card // gallery as card, inline in stories (or elsewhere?)
+    @extend $multiple-item-card
+    .caption
+      margin-bottom 0
+    .heading
+      margin-bottom 13px
+    .gallery-arrow
+      bottom 0
+    .slide
+      padding 0 25px
+      img // @TODO TOOMUCHNEST
+        margin 0
+  &.full-view-launcher
+    border-bottom 0
+    cursor pointer
+    img:not(.slideshow-launch)
+      opacity .25
+    .slideshow-launch
+      opacity 1
+    &:hover
+      img:not(.slideshow-launch)
+        opacity .15
+// end base gallery
+
+// full view icon
+.slideshow-launch
+  @extends $sub-header
+  absolute top 50% left 50%
+  width 100px
+  margin-left -(@width / 2)
+  margin-top -(@width / 2)
+  opacity .5
+// end full view icon
+
+.card.gallery,
+#featured-content.gallery
+  // .slides
+  //   position relative
+  .slide
+    // absolute top 0
+    display none
+    // min-height 175px // prolly remove at some point and in js maybe @TODO
+    width 100%
+    &.active
+      display block
+  // .slide-info-wrapper
+  //   absolute right 0 bottom 0 left 0
+
+
+// arrows
+// [class*='arrow']
+.arrow
+  absolute top 0
+  cursor pointer
+  width 13px
+  z-index 99
+  &.left
+    left 0
+  &.right
+    right 0
+  img
+    absolute top 50%
+// end arrows
+
+// gallery overflow, holds the images
+.gallery-overflow
+  absolute right 0 bottom 50px left 0
+  .v-1 &
+    bottom 63px
+    top 188px
+  img
+    margin 0 auto
+  p
+    @extend $caption-big
+    margin 0 auto
+  em
+    @extends $meta-text
+  +media('tab-max')
+    top 88px
+  +media('tab-plus')
+    top 126px
+// end gallery overflow
+
+
+// slide captions
+.slide-info
+  transition(opacity)
+  // @extends $transition-opacity
+  display none
+  opacity 0
+  user-select text
+  &.active
+    display block
+    opacity 1
+// end slide captions
+
+
+// current slide / total slides
+.slide-counter
+  @extends $meta-text
+  line-height 20px
+  padding 0 0 13px
+  white-space nowrap
+  width 50px
+// end slider counter
+
+.slide-number
+  margin-right 3px
+
+// misc slide stuff
+.slide-counter,
+.slide-number,
+.total-slides
+  float left
+// end misc slide stuff
+
+
+// .v-1
+//   .slide-info-wrapper
+//     transition(height)
+//     // @extends $transition
+//     absolute right 0 bottom -1px left 0
+//     background #111
+//     box-shadow 0 0 1px black
+//     height 50px
+//     padding 13px 0
+//     z-index 99999
+//     &.expanded
+//       box-shadow 0 0 5px black
+//       height 150px
+//     .slide-info
+//       margin 0 auto
+//       max-width 970px
+//       padding 0 25px 25px
+
+// .gallery.v-2
+//   .slide-counter
+//     display none
+//   .slide-info-wrapper
+//     margin 0 auto
+//     max-width 75%
+//     position relative
+//     .slide-info
+//       max-width 800px
+
+// // full screen container, bg overlay
+// #gallery-bg
+//   absolute top 0 right 0 bottom 0 left 0
+//   background white
+//   opacity .98
+//   z-index -1
+//   #featured-gallery &
+//     background gallery-gray
+//     opacity 1
+// // end gallery bg

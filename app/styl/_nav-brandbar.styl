@@ -1,0 +1,288 @@
+/**
+ * brandbar styles
+*/
+
+#nav-sections
+  transition(height)
+  @extends .row
+  height 25px
+  display none
+  +media('tab-plus')
+    site-container()
+    display block
+  .nav-active &
+    display block
+    +media('tab-max')
+      height auto
+      margin 13px 25px
+    +media('tab-plus')
+      height 100px
+  li
+    align-self flex-start
+    flex auto
+    float left
+    min-height 25px
+    position relative
+    text-align center
+    .nav-active &
+      height 100px
+      +media('mob')
+        height 150px
+        max-width 167px
+        width 167px
+      +media('palm')
+        height 175px
+      +media('small-tab')
+        height 200px
+      +media('(min-width 480px) and (max-width 728px)')
+        padding 40px
+        width 33.3%
+      a
+        height 100%
+      .new-icon
+        padding-top 13px
+      i,
+      img
+        display block
+        font-size 72px
+        opacity 1
+    &:first-of-type
+      +media('tab-plus')
+        border-left 1px solid lightest-gray
+    &:hover
+      cursor pointer
+      img
+        opacity 1
+    +media('tab-plus')
+      border-right 1px solid lightest-gray
+      width 16.6666666667%
+  i,
+  img
+    transition(color)
+    color light-gray
+    display none
+    font-size 1px
+    margin 0 auto
+    max-width 70px
+    opacity 0
+  a
+    display block
+    +media('mob')
+      padding 13% 23%
+    +media('tab-max')
+      margin 0
+    +media('tab-plus')
+      padding 3px 7px 5px
+      .nav-active &
+        padding-bottom 9px
+  span
+    @extends $meta-text
+
+.headroom--not-top.headroom--unpinned
+  &.nav-active
+    #global-nav
+      height 25px
+      i,
+      img
+        display none
+        font-size 0
+      .new-icon
+        padding-top 3px
+    #secondary-sections
+      display none
+
+.headroom--not-top.headroom--pinned
+  &.nav-active
+    #global-nav
+      height 137px
+      i,
+      img
+        display block
+        font-size 72px
+      // .new-icon
+      //   padding-top 0
+    #nav-sections
+      li
+        height 100px
+
+#secondary-sections
+  @extends $meta-text
+  border-top 1px solid lightest-gray
+  display none
+  opacity 1
+  max-width 100%
+  padding 25px 0
+  text-align center
+  width auto
+  .nav-active &
+    display block
+  +media('tab-max')
+    margin 0 25px
+    padding-bottom 100px
+  +media('tab-plus')
+    height 35px
+    padding 13px 0
+    text-align left
+  ul
+    display block
+    margin 0 auto
+    +media('tab-plus')
+      height 35px
+      width 610px
+  li
+    margin-right 25px
+    &:last-of-type
+      margin-right 0
+    +media('tab-max')
+      margin-bottom 13px
+  a
+    font-size 10px
+    margin 0
+    white-space nowrap
+
+
+
+
+
+
+
+
+// .section-alt
+//   .nav-active.section-active
+//     #nav-sections
+//       li:not(.current)
+//         img
+//           display none
+//       li
+//         border-top 1px solid lightest-gray
+//         height auto
+//         @media (min-width 728px)
+//           margin-top 74px
+//           padding 0 7px
+//       .current
+//         border-top 0
+//         height 100px
+//         margin-top 0
+
+// .section-alt-2,
+// .section-alt-3
+//   #global-nav
+//     li.business
+//       i,
+//       span
+//         color black
+
+// #global-nav
+//   &.gray,
+//   &.white
+//     li:hover,
+//     li.current
+//       a,
+//       i,
+//       span
+//         color gray !important
+
+// .brand-bar-alt
+//   .header-logo
+//     height 41px!important
+//     padding-top 16px!important
+//   #global-nav
+//     border-top 0
+//     padding-top 6px
+//     min-height 37px
+//     #nav-sections
+//       width 507px
+//       li
+//         border-left 0
+//         border-right 0
+//         padding 0 !important
+//         width auto !important
+//         a
+//           display block
+//           padding 0 13px 13px 13px
+
+// .brand-bar-alt
+//   #global-nav.menu-expanded
+//     height 161px
+//     #nav-sections
+//       height 113px
+//       width 760px
+//     #secondary-sections
+//       padding 16px 0
+
+// #nav-search
+//   @extends $proxima
+//   // display none
+//   height 75px
+//   position relative
+//   text-align center
+//   @media (min-width 728px)
+//     display none
+//     height 137px
+//   input
+//     @extends $transition
+//     -moz-appearance none
+//     -webkit-appearance none
+//     // background-color black
+//     // background-image url('/wp-content/themes/phoenix/images/home/search-bg.jpg')
+//     // background-size 100%
+//     // border 0
+//     background lightest-gray
+//     border 1px solid lightest-gray
+//     border-radius 0
+//     color white
+//     font-size 32px
+//     height 75px
+//     letter-spacing .02em
+//     opacity .75
+//     padding 0
+//     text-align center
+//     width 100%
+//     @media (min-width 728px)
+//       font-size 48px
+//       height 137px
+//     .white &
+//       @media (max-width 728px)
+//         // border-bottom 1px solid lightest-gray
+//         color black
+//     &:hover,
+//     &:focus
+//       opacity 1
+//       outline 0
+//     &:focus + label
+//       opacity .2
+//     &:valid + label
+//       transform(translate3d(-3em, 0, 0))
+//       opacity 0
+//     @media (min-width 728px)
+//       background-color black
+//       background-image url('/wp-content/themes/phoenix/images/home/search-bg.jpg')
+//       background-size 100%
+//       border 0
+//       height 137px
+//   label
+//     @extends $transition
+//     absolute top 50% right 0 left 0
+//     color white
+//     font-size 32px
+//     letter-spacing .02em
+//     margin-top -16px
+//     opacity .5
+//     @media (min-width 728px)
+//       font-size 48px
+//       margin-top -24px
+//     .white &
+//       @media (max-width 728px)
+//         color black
+//     &:hover
+//       cursor text
+//       opacity 1
+
+
+// the little 'space photo of the day' guy in the bottom right when search is open
+// #search-explainer
+//   @extends $meta-text
+//   absolute right 13px bottom 13px
+//   .white &
+//     @media (max-width 728px)
+//       display none

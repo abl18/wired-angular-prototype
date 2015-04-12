@@ -1,0 +1,197 @@
+/**
+ * Icon Font (potentially getting replaced)
+*/
+
+.icon
+  color dark-gray
+  font-family 'icomoon'
+  font-style normal
+  font-variant normal
+  font-weight normal
+  line-height 1
+  speak none
+  text-transform none
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  &:before
+    display inline-block
+  // icon classes
+  &.security:before
+    content '\e600'
+  &.science:before
+    content '\e601'
+  &.mag:before
+    content '\e603'
+  &.gear:before
+    content '\e604'
+  &.entertainment:before
+    content '\e605'
+  &.design:before
+    content '\e606'
+  &.business:before
+    content '\e607'
+
+.card
+  .icon
+    border-radius 50%
+    display inline-block
+    font-size 36px
+    vertical-align bottom
+    text-align center
+    width 40px
+    &.security
+      background security
+      color white
+    &.science
+      background science
+    &.magazine
+      background black
+    &.gear
+      background gear
+    &.entertainment
+      background entertainment
+    &.design
+      background design
+    &.business
+      background biz
+    &.gear,
+    &.business,
+    &.entertainment
+      color dark-gray
+
+// .iconWrap
+//   border-radius 50%
+//   display inline-block
+//   height 40px
+//   margin 0 3px 0 0
+//   padding 1px 0 0
+//   width 40px
+//   &.security
+//     background security
+//   &.science
+//     background science
+//   &.magazine
+//     background black
+//   &.gear
+//     background gear
+//   &.entertainment
+//     background entertainment
+//   &.design
+//     background design
+//   &.business
+//     background biz
+//   &.gear,
+//   &.business,
+//   &.entertainment
+//     color dark-gray
+
+
+.ui
+  background-image url('../images/ui/sprite/ui-dist-sprite-std.png')
+  background-image url('../images/ui/sprite/ui-dist-sprite.svg')
+  background-position-y 0
+  background-size auto 90px
+  display inline-block
+  height 30px
+  width 30px
+  #sharing &
+    display block
+    float left
+    margin 5px 13px 13px 0
+  &.ui-fb
+    background-position-x -630px
+    &:hover
+      background-position-x -540px
+  &.ui-twit
+    background-position-x -90px
+    &:hover
+      background-position-x -900px
+  &.ui-pint
+    background-position-x -1350px
+    &:hover
+      background-position-x -1260px
+  &.ui-mail
+    background-position-x -1080px
+    &:hover
+      background-position-x -990px
+  &.ui-comments
+    background-position-x -450px
+    &:hover
+      background-position-x -360px
+  &.ui-arrow
+    background-position-x 0
+    &.left
+      transform rotate(180deg)
+  &.ui-boxes
+    background-position-x -493px
+    opacity .5
+  &.ui-close
+    background-position-x -180px
+  &.ui-info
+    background-position-x -720px
+  &.ui-logo
+    background-position-x -1478px
+    background-position-y 10px
+    height 50px
+    width 133px
+  &.ui-more
+    background-position-x -1170px
+  &.ui-search
+    background-position-x -880px
+  &.ui-search,
+  &.ui-boxes
+    background-size auto 55px
+    height 20px
+    width 20px
+
+.ui-gallery-arrow
+  absolute top 50%
+  background white
+  cursor pointer
+  height 60px
+  margin-top -55px
+  opacity .75
+  padding 13px
+  width 60px
+  &:before
+    absolute top 15px left 15px
+    background-image url('../images/ui/sprite/ui-dist-sprite-std.png')
+    background-image url('../images/ui/sprite/ui-dist-sprite.svg')
+    background-position-x 0
+    background-position-y 0
+    background-size auto 90px
+    content ''
+    height 30px
+    width 30px
+  &:hover
+    opacity 1
+  &.left
+    transform rotate(180deg)
+    &:before
+      background-position-x 3px
+  &.right
+    right 0
+
+
+
+
+  // &.ui-fb
+  //   background-position-x -150px
+  //   &:hover
+  //     background-position-x -100px
+  // &.ui-twit
+  //   background-position-x -450px
+  //   &:hover
+  //     background-position-x -400px
+  // &.ui-mail
+  //   background-position-x -250px
+  //   &:hover
+  //     background-position-x -200px
+  // &.ui-comments
+  //   background-position-x -550px
+  //   &:hover
+  //     background-position-x -500px
+  // &.ui-pint
+  //   background-position-x -850px
+  //   &:hover
+  //     background-position-x -800px

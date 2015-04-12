@@ -1,0 +1,67 @@
+/**
+ * Post Header = the area at the start of an article
+ * contains the metadata, headline, lead imagery / gallery
+*/
+
+#featured-content
+  position relative
+  &.full-view
+    padding-bottom 12px
+  img
+    width 100%
+
+#inset-feature-image
+  @extends $multiple-item-card
+  background white
+  padding 13px 0 0
+  position relative
+  #expandable-gallery &
+    border-top 0
+  +media('max-width 850px')
+    margin 25px 0
+  .caption
+    border-bottom 1px solid lightest-gray
+
+.metadata
+  @extends $clearfix
+  @extends $meta-text
+  margin 0 0 13px
+  .search &
+    margin-bottom 7px
+  li
+    display inline-block
+    margin 0 13px 0 0
+  .author
+    @extends $link-underline
+    box-shadow inset 0 -2px 0 light-blue
+
+#post-header
+  @extends $clearfix
+  margin 0 auto
+  padding 50px 0 38px
+  position relative
+  .standard &
+    +media('tab-plus')
+      padding-right 350px
+  .wide &
+    @extends $site-container
+    .metadata
+      margin 0 auto 13px
+    // #post-container
+    //   .advertisement
+    //     z-index 9
+
+// post headline defaults to mobile size and scales up to standard size
+#post-title
+  @extends $ambroise
+  font-size 44px
+  letter-spacing .01em
+  line-height 42px
+  margin 0 0 25px
+  +media('tab-plus')
+    font-size 64px
+    line-height 56px
+    margin 0 auto 45px
+  .text &,
+  .inset &
+    margin-bottom 0

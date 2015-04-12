@@ -1,0 +1,97 @@
+/**
+ * Styling for various ad types
+*/
+
+.rad
+  cursor pointer
+  margin 0 auto 13px
+  min-height 50px
+  min-width 300px
+  position relative
+  #featured-gallery &
+    background gallery-gray
+  img
+  iframe
+    display block
+    margin 0 auto
+  &.box
+    height 250px
+    width 300px
+  &.tall
+    height 600px
+  &.wallpaper-overlay
+    background transparent
+    opacity .5
+    padding 75px 0 50px
+    img
+      width 125px
+  &.full-width
+    margin 25px 0
+    padding 25px
+    z-index 99
+    +media('lap-plus')
+      padding 50px
+
+  // @TODO this might change
+  section &,
+  #prefooter &
+    padding 6px
+    min-width 312px
+    max-width 312px // im setting images to 100%, and im using fake images for the ads for now, so set a max-width
+
+// leader, billboard, pushdown
+.rad-top
+  transition(margin-top)
+  background lightest-gray
+  margin-bottom 0
+  padding 13px 0
+  &.headroom--top.nav-active
+    +media('tab-plus')
+      margin-top 113px // keep ad visible
+
+.billboard,
+.leaderboard
+  +media('tab-plus')
+    img,
+    iframe
+      height 90px
+      width 728px
+
+.billboard
+  +media('lap-plus')
+    height 276px
+    img,
+    iframe
+      width 970px
+
+// 970x70 > 970x418
+.pushdown
+  +media('lap-plus')
+    height 90px
+    width 970px
+    &:hover
+      height 468px
+    img,
+    iframe
+      height 468px
+      width 970px
+
+.rad-fullscreen
+  transition(opacity)
+  background rgba(0, 0, 0, .9)
+  display none
+  fixed top 0 right 0 bottom 0 left 0
+  font-smoothing antialiased
+  opacity 0
+  padding 50px 10% 10%
+  z-index 999999999999
+  &.active
+    display block
+    opacity 1
+  .close
+    absolute top 50px right 50px
+    width 40px
+  // @TODO do betta
+  // img:not(.close)
+  //   margin-top 50px
+  //   width 80%

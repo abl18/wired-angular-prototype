@@ -1,0 +1,21 @@
+<div class='card smart' ng-controller='RecircCtrl'>
+  <h4 class='hdr'><a href='/'>Latest News</a></h4>
+
+  <ul class='story-list'>
+    <li ng-repeat='article in recirc track by article.ID' ng-animate="{enter: 'ng-enter', leave: 'ng-leave'}">
+      <a ui-sref="#/article.detail({ id: article.ID})">
+        <img class='thumb' ng-src="{{article.featured_image.attachment_meta.sizes.thumbnail.url}}" />
+
+        <div class='post-wrap'>
+          <span class='meta'>{{article.terms.category[0].name}}</span>
+          <h5 class='title' ng-bind-html="article.title"></h5>
+          <span class='meta time'>{{article.date}}</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <a class='more' ng-href='#/latestNews/'>
+    <span>More News</span>
+  </a>
+</div>

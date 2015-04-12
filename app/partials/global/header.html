@@ -1,0 +1,81 @@
+<div id='logo-bar'>
+  <a id='nav-tog' class='toggle' data-js='navToggle'>
+    <span class='ui ui-boxes' aria-hidden='true'></span>
+    <span class='visually-hidden'>Menu</span>
+  </a>
+  <a id='search-tog' class='toggle' data-js='searchToggle'>
+    <span class='ui ui-search hide-mobile' aria-hidden='true'></span>
+    <span class='visually-hidden'>Search</span>
+  </a>
+  <a ui-sref='home' id='hdr-logo'>
+    <span class='ui ui-logo'></span>
+  </a>
+  <span id='article-title'>
+    <a href='#/'><span class='ui ui-logo'></span></a>
+    <h6>A North Korean Architect's Vision of the Future</h6>
+  </span>
+  <a href='https://subscribe.wired.com/subscribe/wired/90542?source=AMS_WIR_GLOBAL_NAVBAR&amp;pos_name=AMS_WIR_GLOBAL_NAVBAR' class='subscribe button'>SUBSCRIBE</a>
+</div>
+
+<nav id='global-nav' role='menubar'>
+  <form id='nav-search' method='get' action='<?php echo get_home_url(); ?>' role='search'>
+    <fieldset>
+      <input id='s' name="s" type='search' required='required'/>
+      <label for='s'>Search</label>
+      <input id='search-submit' type='submit' value='Submit Search'/>
+    </fieldset>
+  </form>
+  <ul id='nav-sections'>
+    <li class='business'>
+        <a class='new-icon' ui-sref="section({section: 'business'})">
+          <img src='images/ui/business.svg' />
+          <span>Business</span>
+        </a>
+    </li>
+
+    <li class='design'>
+        <a class='new-icon' ui-sref="section({section: 'design'})">
+          <img src='images/ui/design.svg' />
+          <span>Design</span>
+        </a>
+    </li>
+
+    <li class='entertainment'>
+        <a class='new-icon' ui-sref="section({section: 'entertainment'})">
+          <img src='images/ui/entertainment.svg' />
+          <span>Entertainment</span>
+        </a>
+    </li>
+
+    <li class='gear'>
+        <a class='new-icon' ui-sref="section({section: 'gear'})">
+          <img src='images/ui/gear.svg' />
+          <span>Gear</span>
+        </a>
+    </li>
+
+    <li class='science'>
+        <a class='new-icon' ui-sref="section({section: 'science'})">
+          <img src='images/ui/science.svg' />
+          <span>Science</span>
+        </a>
+    </li>
+
+    <li class='security'>
+        <a class='new-icon' ui-sref="section({section: 'security'})">
+          <img src='images/ui/security.svg' />
+          <span>Security</span>
+        </a>
+    </li>
+  </ul>
+  <div id='secondary-sections' class='row'>
+    <ul>
+      <li class='col'><a ui-sref='photo/'>Photo</a></li>
+      <li class='col'><a ui-sref='video/'>Video</a></li>
+      <li class='col'><a ui-sref='magazine/'>Magazine</a></li>
+      <li class='col'><a ui-sref='insider/'>WIRED INSIDER</a></li>
+      <li class='col'><a ui-sref='insights/'>INNOVATION INSIGHTS</a></li>
+      <li class='col'><a ui-sref='theconnective/'>THE CONNECTIVE</a></li>
+    </ul>
+  </div>
+</nav>

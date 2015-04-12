@@ -1,0 +1,49 @@
+/**
+ * STICKIEZ
+*/
+
+.sticky
+  transition(all)
+  // @extends $transition
+  position fixed
+  &.headroom--top,
+  &.headroom--top.headroom--pinned
+    +media('tab-max')
+      top 240px
+  &.headroom--top.nav-active
+    +media('tab-max')
+      top 345px
+  &.headroom--not-top.headroom--unpinned.nav-active
+    +media('tab-plus')
+      top 100px
+  &.headroom--not-top.headroom--pinned.nav-active
+    +media('tab-plus')
+      top 213px
+  &.headroom--pinned.headroom--not-top
+    +media('tab-plus')
+      top 75px
+  &.headroom--unpinned,
+  &.headroom--not-top
+    +media('tab-plus')
+      top 75px
+  &.headroom--pinned
+    +media('tab-plus')
+      top 75px
+  &.stuck
+    absolute bottom 0
+    top auto !important
+
+
+// .billboard-ad-test
+//   .sticky.headroom--top
+//     +media('desk')
+//       top 413px
+//   &.both
+//     .sticky.headroom--top
+//       +media('desk')
+//         top 513px
+
+// .billboard-ad-test.above
+//   .sticky.headroom--top
+//     +media('desk')
+//       top 413px

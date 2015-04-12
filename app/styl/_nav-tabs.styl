@@ -1,0 +1,46 @@
+.section-tab
+  transition(all)
+  background white
+  border 1px solid lightest-gray
+  box-shadow 0 0 2px light-gray
+  display none
+  fixed top 50%
+  height 60px
+  margin-top -30px
+  opacity .75
+  padding 13px
+  width 60px
+  z-index 999999999999
+  +media('desk')
+    display block
+  .footer-expanded &
+    display none
+  &:hover
+    opacity 1
+    // .post-wrap
+    //   display block
+    // h4
+    //   color black
+  &.next
+    right 0
+    text-align right
+    .post-wrap
+      float left
+      margin-right 13px
+    .ui-arrow
+      float right
+  &.prev
+    .ui-arrow
+      float left
+      transform rotate(180deg)
+    .post-wrap
+      float right
+      margin-left 13px
+  .post-wrap
+    display none
+    width calc(100% - 43px)
+  // h4
+  //   font-family proxima
+  //   margin-top 4px
+  // .meta
+  //   white-space nowrap

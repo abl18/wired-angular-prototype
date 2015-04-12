@@ -1,0 +1,37 @@
+{
+  "author": "Ross Patton",
+  "description": "Making Wired Angular - Grunt Stuff",
+  "name": "Wired-Angular",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.x",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-autoprefixer": "^0.8.2",
+    "grunt-contrib-stylus": "^0.18.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.6.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^0.8.2",
+    "grunt-browser-sync": "^1.3.6",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-stylus": "^0.18.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-dr-svg-sprites": "^0.9.12",
+    "grunt-es6-transpiler": "^0.1.0",
+    "grunt-svgmin": "^1.0.0",
+    "karma": "^0.12.23",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-safari-launcher": "^0.1.1",
+    "load-grunt-tasks": "^0.6.0",
+    "ngreact": "^0.1.0"
+  }
+}

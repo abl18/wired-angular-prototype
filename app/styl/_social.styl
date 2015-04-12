@@ -1,0 +1,53 @@
+/**
+ * Social stylz
+*/
+
+// absolute positioned share tool, hidden by default
+#sharing
+  absolute top 0 bottom 0
+  display none
+  width 55px
+  // desktop size show share tools
+  +media('lap-plus')
+    display block
+  a
+    @extends $clearfix
+    @extends $no-underline
+  img
+    float left
+    margin 13px 13px 13px 0
+    width 25px
+  .meta
+    display inline
+    float left
+    margin-top 16px
+  .fb
+    img
+      margin 0 18px 13px 5px
+      width 15px
+    .meta
+      margin-top 13px
+
+#author-share
+  margin-top 13px
+  li
+    display inline-block
+    margin-right 13px
+    img
+        width 25px
+    .fb
+      img
+        width 10px
+
+// .single
+//   #author-share
+//     li
+//       display block
+//       margin-bottom 13px
+
+// #author-share
+//   img
+//     width 25px
+//   .fb
+//     img
+//       width 10px
